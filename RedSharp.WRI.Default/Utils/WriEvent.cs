@@ -1,6 +1,7 @@
 ﻿using RedSharp.WRI.Interfaces.Utils;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace RedSharp.WRI.Utils
@@ -10,62 +11,12 @@ namespace RedSharp.WRI.Utils
     /// </summary>
     public class WriEvent<TModel> : IWriEvent<TModel>
     {
-        #region Internal Types
-        //========================================//
-        //Internal Types
-
-        /// <summary>
-        /// Special wrapper is created for handler subscription.
-        /// </summary>
-        private class WriEventPersonalListener : IWriPersonalListener
-        {
-            public WriEventPersonalListener(Object action)
-            {
-                IsEnabled = true;
-                IsDisposed = false;
-
-                Action = action;
-            }
-
-            ///<inheritdoc/>
-            public bool IsEnabled { get; set; }
-
-            ///<inheritdoc/>
-            public bool IsDisposed { get; private set; }
-
-            /// <summary>
-            /// Non casted action.
-            /// </summary>
-            public Object Action { get; private set; }
-
-            /// <summary>
-            /// Invoke to stop receiving.
-            /// </summary>
-            public void Dispose()
-            {
-                IsDisposed = true;
-            }
-
-            ///<inheritdoc/>
-            public void Raise<TArguments>(TArguments model)
-            {
-                if (!IsEnabled || IsDisposed)
-                    return;
-
-                var castedAction = Action as Action<TArguments>;
-
-                castedAction.Invoke(model);
-            }
-        }
-
-        #endregion
-
         #region Members
         //========================================//
         //Members
 
         private Type _internalType = null;
-        private WriLinkedList<IWriListener> _listeners;
+        private WriLinkedList<IWriListener<TModel>> _listeners;
         private Object _lockKey;
 
         #endregion
@@ -94,7 +45,7 @@ namespace RedSharp.WRI.Utils
             Name = name;
             Owner = owner;
 
-            _listeners = new WriLinkedList<IWriListener>();
+            _listeners = new WriLinkedList<IWriListener<TModel>>();
             _lockKey = new Object();
         }
 
@@ -120,21 +71,7 @@ namespace RedSharp.WRI.Utils
         }
 
         ///<inheritdoc/>
-        public IWriPersonalListener Register(Action<TModel> handler)
-        {
-            if (handler == null)
-                throw new ArgumentNullException(nameof(handler));
-
-            var listener = new WriEventPersonalListener(handler);
-
-            lock(_lockKey)
-                _listeners.Add(listener);
-
-            return listener;
-        }
-
-        ///<inheritdoc/>
-        public void Subscribe(IWriListener listener)
+        public void Subscribe(IWriListener<TModel> listener)
         {
             if (listener == null)
                 throw new ArgumentNullException(nameof(listener));
@@ -147,7 +84,7 @@ namespace RedSharp.WRI.Utils
         }
 
         ///<inheritdoc/>
-        public void Unsubscribe(IWriListener listener)
+        public void Unsubscribe(IWriListener<TModel> listener)
         {
             if (listener == null)
                 throw new ArgumentNullException(nameof(listener));
@@ -160,15 +97,25 @@ namespace RedSharp.WRI.Utils
         /// Allows to raise event. 
         /// Pay attention: this object doesn't check input arguments on null.
         /// </summary>
-        public void Raise(TModel arguments)
+        public void Invoke(TModel arguments)
         {
             foreach(var item in _listeners)
             {
                 try
                 {
-                    item.Raise(arguments);
+                    item.ReceiveEvent(arguments);
                 }
-                catch { }
+                catch(Exception exception)
+                {
+                    try
+                    {
+                        item.ReceiveException(exception);
+                    }
+                    catch
+                    {
+                        Trace.WriteLine("Event caught exception from receiving exception to listener.");
+                    }
+                }
             }
         }
 

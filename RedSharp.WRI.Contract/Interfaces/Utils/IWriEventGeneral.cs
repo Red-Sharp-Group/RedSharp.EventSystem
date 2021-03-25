@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace RedSharp.WRI.Interfaces.Utils
 {
     /// <summary>
-    /// Simple event descriptor, so you can recognize it if you set the event in a collection f.e.
+    /// Simple event descriptor, so you can recognize an event even if you set it in a collection f.e.
     /// </summary>
-    public interface IWriEventDescriptor
+    public interface IWriEventGeneral
     {
         /// <summary>
         /// Events name, strongly recommend to use nameof()
@@ -20,10 +22,5 @@ namespace RedSharp.WRI.Interfaces.Utils
         /// it would be nice to know who it hold.
         /// </summary>
         Object Owner { get; }
-
-        /// <summary>
-        /// Type of argument.
-        /// </summary>
-        Type Type { get; }
     }
 }

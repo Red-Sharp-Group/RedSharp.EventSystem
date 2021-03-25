@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSharp.WRI", "RedSharp.WRI\RedSharp.WRI.csproj", "{489934B3-6C0C-4C81-BD4F-684D0B42EB60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedSharp.WRI.Contract", "RedSharp.WRI.Contract\RedSharp.WRI.Contract.csproj", "{7C939427-CA11-42CA-B693-AF359D96D509}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedSharp.WRI.Default", "RedSharp.WRI.Default\RedSharp.WRI.Default.csproj", "{A3E6CA8B-8192-4F63-9FD8-17B87788B984}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{489934B3-6C0C-4C81-BD4F-684D0B42EB60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{489934B3-6C0C-4C81-BD4F-684D0B42EB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{489934B3-6C0C-4C81-BD4F-684D0B42EB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{489934B3-6C0C-4C81-BD4F-684D0B42EB60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C939427-CA11-42CA-B693-AF359D96D509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C939427-CA11-42CA-B693-AF359D96D509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C939427-CA11-42CA-B693-AF359D96D509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C939427-CA11-42CA-B693-AF359D96D509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E6CA8B-8192-4F63-9FD8-17B87788B984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E6CA8B-8192-4F63-9FD8-17B87788B984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E6CA8B-8192-4F63-9FD8-17B87788B984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E6CA8B-8192-4F63-9FD8-17B87788B984}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,28 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace RedSharp.WRI.Interfaces.Utils
 {
     /// <summary>
     /// The main object of whole assembly.
     /// Allows you to subscribe and unsubscribe without memory leaks.
-    /// Just dispose your personal listener and leave it, that's all.
+    /// Just dispose your listener or/and leave it, that's all.
     /// </summary>
     /// <typeparam name="TModel">Arguments.</typeparam>
-    public interface IWriEvent<TModel> : IWriEventDescriptor
+    public interface IWriEvent<TModel> : IWriEventGeneral
     {
-        /// <summary>
-        /// Allows to subscribe by input handler. That's the most usual case of using.
-        /// </summary>
-        /// <remarks>
-        /// Must be thread safe.
-        /// </remarks>
-        /// <exception cref="ArgumentNullException">
-        /// Handler was null.
-        /// </exception>
-        IWriPersonalListener Register(Action<TModel> handler);
-
         /// <summary>
         /// Allows to subscribe by special object-listener.
         /// </summary>
@@ -32,7 +23,7 @@ namespace RedSharp.WRI.Interfaces.Utils
         /// <exception cref="ArgumentNullException">
         /// Listener was null.
         /// </exception>
-        void Subscribe(IWriListener listener);
+        void Subscribe(IWriListener<TModel> listener);
 
         /// <summary>
         /// Allows to unsubscribe by special object-listener.
@@ -44,6 +35,6 @@ namespace RedSharp.WRI.Interfaces.Utils
         /// <exception cref="ArgumentNullException">
         /// Listener was null.
         /// </exception>
-        void Unsubscribe(IWriListener listener);
+        void Unsubscribe(IWriListener<TModel> listener);
     }
 }

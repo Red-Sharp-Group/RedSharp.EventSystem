@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace RedSharp.WRI.Interfaces.Utils
 {
     /// <summary>
-    /// That is object event receiver, surprise.
+    /// This is an object main event receiver.
     /// </summary>
-    public interface IWriListener
+    public interface IWriListener<TModel> : IWriListenerGeneral
     {
         /// <summary>
         /// Method event receiver.
@@ -19,6 +21,6 @@ namespace RedSharp.WRI.Interfaces.Utils
         /// Event argument model.
         /// In most cases must be not null. But it depends on author implementation.
         /// </typeparam></param>
-        void Raise<TModel>(TModel model);
+        void ReceiveEvent(TModel model);
     }
 }
