@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>RedSharp.WRI</RootNamespace>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>RedSharp.EventSystem</RootNamespace>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Version>1.0.0.0</Version>
     <Authors>Andrii Kudriavtsev</Authors>
     <Company>Red Sharp Group</Company>
-    <Product>RedSharp.WRI</Product>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Product>RedSharp.EventSystem</Product>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,10 +15,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\RedSharp.WRI.Contract\RedSharp.WRI.Contract.csproj" />
   </ItemGroup>
 
 </Project>
