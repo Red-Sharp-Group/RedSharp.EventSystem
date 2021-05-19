@@ -11,14 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RedSharp.EventSystem.WR.Contract\RedSharp.EventSystem.WR.Contract.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RedSharp.EventSystem.Contract\RedSharp.EventSystem.Contract.csproj" />
   </ItemGroup>
 
 </Project>
