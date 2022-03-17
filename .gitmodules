@@ -1,0 +1,3 @@
+[submodule "RedSharp.System"]
+	path = RedSharp.System
+	url = https://github.com/Red-Sharp-Group/RedSharp.System.git
