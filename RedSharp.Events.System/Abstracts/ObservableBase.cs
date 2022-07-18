@@ -9,7 +9,7 @@ using RedSharp.Sys.Helpers;
 
 namespace RedSharp.Events.Sys.Abstracts
 {
-    public abstract class ObservableBase<TItem> : IEventSource<TItem>
+    public abstract class ObservableBase<TItem> : IEventSource2<TItem>
     {
         private ICollection<IObserver<TItem>> _subscribers;
         private Object _lock;

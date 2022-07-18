@@ -1,7 +1,7 @@
 ﻿using System;
 using RedSharp.Events.Sys.Helpers;
 using RedSharp.Events.Sys.Interfaces;
-using RedSharp.Sys.Abstracts;
+using RedSharp.Sys.Collections.Abstracts;
 using RedSharp.Sys.Helpers;
 
 namespace RedSharp.Events.Sys.Utils
@@ -12,7 +12,7 @@ namespace RedSharp.Events.Sys.Utils
     /// <remarks>
     /// Uses weak references in its internal work
     /// </remarks>
-    public class WeakReferenceObservable<TItem> : WeakShrinkableCollectionBase<IObserver<TItem>>, IEventSource<TItem>
+    public class WeakReferenceObservable<TItem> : WeakShrinkableCollectionBase<IObserver<TItem>>, IEventSource2<TItem>
     {
         private Object _lock;
 

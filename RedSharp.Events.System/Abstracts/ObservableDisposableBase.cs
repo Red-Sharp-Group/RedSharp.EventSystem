@@ -10,7 +10,7 @@ using RedSharp.Sys.Helpers;
 
 namespace RedSharp.Events.Sys.Abstracts
 {
-    public abstract class ObservableDisposableBase<TItem> : DisposableBase, IEventSource<TItem>
+    public abstract class ObservableDisposableBase<TItem> : DisposableBase, IEventSource2<TItem>
     {
         private ICollection<IObserver<TItem>> _subscribers;
         private Object _lock;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RedSharp.Events.Sys.Utils;
-using RedSharp.Sys.Utils;
+using RedSharp.Sys.Collections;
 
 namespace RedSharp.Events.Sys.Abstracts
 {

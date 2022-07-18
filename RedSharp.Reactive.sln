@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedSharp.System", "RedSharp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedSharp.Events.System", "RedSharp.Events.System\RedSharp.Events.System.csproj", "{07B97426-00C1-4408-997F-DCE889BB33AE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedSharp.Reactive.System", "RedSharp.Reactive.System\RedSharp.Reactive.System.csproj", "{4DCBCE10-232F-4BD4-A6F5-48AEB02A093A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedSharp.Reactive.Bindings", "RedSharp.Reactive.Bindings\RedSharp.Reactive.Bindings.csproj", "{E00A70C7-D0D3-437E-A016-FEB4C79B7FD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedSharp.System.Collections", "RedSharp.System\RedSharp.System.Collections\RedSharp.System.Collections.csproj", "{A97B0C66-F189-461E-B962-3DFACBF672DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{07B97426-00C1-4408-997F-DCE889BB33AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07B97426-00C1-4408-997F-DCE889BB33AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07B97426-00C1-4408-997F-DCE889BB33AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DCBCE10-232F-4BD4-A6F5-48AEB02A093A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DCBCE10-232F-4BD4-A6F5-48AEB02A093A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DCBCE10-232F-4BD4-A6F5-48AEB02A093A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DCBCE10-232F-4BD4-A6F5-48AEB02A093A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E00A70C7-D0D3-437E-A016-FEB4C79B7FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E00A70C7-D0D3-437E-A016-FEB4C79B7FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E00A70C7-D0D3-437E-A016-FEB4C79B7FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E00A70C7-D0D3-437E-A016-FEB4C79B7FD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A97B0C66-F189-461E-B962-3DFACBF672DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97B0C66-F189-461E-B962-3DFACBF672DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97B0C66-F189-461E-B962-3DFACBF672DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97B0C66-F189-461E-B962-3DFACBF672DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

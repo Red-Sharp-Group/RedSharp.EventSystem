@@ -16,15 +16,15 @@ namespace RedSharp.Events.Sys.Utils
     /// </summary>
     public class WeakReferenceListener<TItem> : IDisposable, IDisposeIndication
     {
-        private WeakReference<IEventSource<TItem>> _ownerWeakRef;
+        private WeakReference<IEventSource2<TItem>> _ownerWeakRef;
         private IObserver<TItem> _observer;
 
-        public WeakReferenceListener(IEventSource<TItem> owner, IObserver<TItem> observer)
+        public WeakReferenceListener(IEventSource2<TItem> owner, IObserver<TItem> observer)
         {
             ArgumentsGuard.ThrowIfNull(owner);
             ArgumentsGuard.ThrowIfNull(observer);
 
-            _ownerWeakRef = new WeakReference<IEventSource<TItem>>(owner);
+            _ownerWeakRef = new WeakReference<IEventSource2<TItem>>(owner);
             _observer = observer;
         }
 
@@ -37,7 +37,7 @@ namespace RedSharp.Events.Sys.Utils
 
             try
             {
-                if (_ownerWeakRef.TryGetTarget(out IEventSource<TItem> owner))
+                if (_ownerWeakRef.TryGetTarget(out IEventSource2<TItem> owner))
                     owner.Unsubscribe(_observer);
 
                 _ownerWeakRef = null;

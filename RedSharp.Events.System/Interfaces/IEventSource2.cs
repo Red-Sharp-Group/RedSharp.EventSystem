@@ -9,7 +9,7 @@ namespace RedSharp.Events.Sys.Interfaces
     /// <summary>
     /// Extension for the existing interface, just to support unsubscribing as a standard.
     /// </summary>
-    public interface IEventSource<TItem> : IObservable<TItem>
+    public interface IEventSource2<TItem> : IObservable<TItem>
     {
         /// <summary>
         /// Performs the unsubscribe process. Mostly used for internal needs.
