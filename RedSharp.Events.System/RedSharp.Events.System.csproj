@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="$(SolutionDir)\RedSharp.System\RedSharp.System.Collections\RedSharp.System.Collections.csproj" />
-    <ProjectReference Include="$(SolutionDir)\RedSharp.System\RedSharp.System\RedSharp.System.csproj" />
+    <ProjectReference Include="$(Module-RedSharpSystem)\RedSharp.System.Collections\RedSharp.System.Collections.csproj" />
+    <ProjectReference Include="$(Module-RedSharpSystem)\RedSharp.System\RedSharp.System.csproj" />
   </ItemGroup>
 
   <Import Project="$(ProjectDir)..\Definitions.props" />

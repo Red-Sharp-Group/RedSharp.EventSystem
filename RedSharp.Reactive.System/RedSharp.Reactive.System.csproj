@@ -12,7 +12,7 @@
   <Import Project="$(ProjectDir)..\Definitions.props" />
   
   <ItemGroup>
-    <ProjectReference Include="$(SolutionDir)\RedSharp.System\RedSharp.System\RedSharp.System.csproj" />
+    <ProjectReference Include="$(Module-RedSharpSystem)\RedSharp.System\RedSharp.System.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,36 @@
+<Project><!--
+
+     ,////////////////////////          
+        /////////////////////////       
+          ,////////////////////////     
+    ///(                    ((((((((    
+    ///((((                 ((((((((    
+    //((((((                ((((((((    
+    //((((((                ((((((((    
+    /(((((((                ((((((((    
+    /((((((((               ((((((((    
+    (((((((((((             ((((((((    
+      *###################    ,(((((    
+         ###################     (((    
+           *################       ,   
+
+            RED SHARP GROUP
+               
+This file is modules definition, as different solutions 
+may have different folders for submodules/dependencies, 
+the solution can declare such file with other paths 
+to the project dependencies.
+-->
+  <PropertyGroup>
+   <!--DEFINE MODULES HERE-->
+
+    <Module-RedSharpSystem>$(SolutionDir)\RedSharp.System</Module-RedSharpSystem>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <!--==================================================-->
+    <!--Include this .props file to the project-->
+    <None Include="$(MSBuildThisFileFullPath)"
+          Link="$(MSBuildThisFile)" />
+  </ItemGroup>
+</Project>

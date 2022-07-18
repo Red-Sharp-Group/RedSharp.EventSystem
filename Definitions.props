@@ -43,6 +43,9 @@ To import this file add next line to the .csproj file:
     <PackageLicenseFile>LICENSE</PackageLicenseFile>    
   </PropertyGroup>
 
+  <!--Imports modules definitions for this solution-->
+  <Import Project="$(SolutionDir)\Modules.props" />
+
   <ItemGroup>
     <!--==================================================-->
     <!--Include license file to the project-->
